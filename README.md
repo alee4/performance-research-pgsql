@@ -16,3 +16,10 @@ setup
   60 = how long you want to run each test for
   10 = db warmup
   3 = number of runs per release
+
+
+some context-
+ the ./test-pg13-commits-rigorous.sh script executes docker exec postgres-test sysbench oltp_write_only run
+ inside a container, this runs random write operations for 60 seconds. oltp is a sysbench thing, other ones are oltp_read_write, oltp_read_only, oltp_write_only, oltp_point_select, oltp_update_index
+
+output gives TPS (transactions per sec) and latency percentiles
